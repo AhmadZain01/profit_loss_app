@@ -1,10 +1,7 @@
-<h1>Welcome#index</h1>
 <div class="form-group">
   <%= link_to "logout", destroy_user_session_path, method: :delete %>
 </div>
 <div class="form-group">
-  <%= link_to '#',remote: true, id: "new-item-link", class: "btn btn-lg btn-primary round" do %> Add income
-  <%end%>
-  <%= link_to "#", remote: true, id: "new-item-link", class: "btn btn-lg btn-primary round" do %> Add Expenses
+  <%= link_to new_budget_path remote: true, id: "new-item-link", class: "btn btn-sm btn-default round" do %> Budget Portal
   <%end%>
 </div>
