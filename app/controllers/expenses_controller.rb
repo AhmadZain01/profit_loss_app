@@ -10,7 +10,7 @@ class ExpensesController < ApplicationController
   def create
     @expense = Expense.new(expense_params)
     @expense.save
-    redirect_to expenses_path(@budget)
+    redirect_to expenses_path(@expense)
   end
 
   def edit
