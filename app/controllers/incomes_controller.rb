@@ -1,6 +1,6 @@
 class IncomesController < ApplicationController
   def index
-    @incomes = Income.all
+    @incomes = current_user.incomes
   end
 
   def new
@@ -9,6 +9,7 @@ class IncomesController < ApplicationController
 
   def create
     @income = Income.new(income_params)
+    @income.user = current_user
     @income.save
     redirect_to incomes_path(@income)
   end
@@ -19,7 +20,7 @@ class IncomesController < ApplicationController
 
   def update
     @income = Income.find(params[:id])
-    if @income.update(@income)
+    if @income.update(@income_params)
       flash[:notice] = "Income was successfully updated"
       redirect_to incomes_path(@income)
     else

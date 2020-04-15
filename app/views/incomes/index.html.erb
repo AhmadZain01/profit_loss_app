@@ -19,6 +19,9 @@
     </tr>
     <% end %>
     <hr>
-    <td><%= Income.sum(:amount)-Expense.sum(:amount) %></td>
+    <td><%= current_user.incomes.total_value %></td>
+    <div class="form-group">
+      <%= link_to "logout", destroy_user_session_path, method: :delete %>
+    </div>
   </tbody>
 </table>
