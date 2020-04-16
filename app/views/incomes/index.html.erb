@@ -12,11 +12,11 @@
   </thead>
   <tbody>
     <% @incomes.each do |income| %>
-    <tr>
-      <td><%= income.amount %> </td>
-      <td> <%= link_to "Edit Income", edit_income_path(income) %></td>
-      <td><%= link_to 'Delete', income_path(income), method: :delete, data: {confirm: "Are you sure?"} %></td>
-    </tr>
+      <tr>
+        <td><%= income.amount %> </td>
+        <td> <%= link_to "Edit Income", edit_income_path(income) %></td>
+        <td><%= link_to 'Delete', income_path(income), method: :delete, data: {confirm: "Are you sure?"} %></td>
+      </tr>
     <% end %>
     <td><%= current_user.total_incomes %></td>
     <div class="form-group">
