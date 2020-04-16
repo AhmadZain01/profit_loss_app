@@ -18,8 +18,7 @@
       <td><%= link_to 'Delete', income_path(income), method: :delete, data: {confirm: "Are you sure?"} %></td>
     </tr>
     <% end %>
-    <hr>
-    <td><%= current_user.incomes.total_value %></td>
+    <td><%= current_user.total_incomes %></td>
     <div class="form-group">
       <%= link_to "logout", destroy_user_session_path, method: :delete %>
     </div>

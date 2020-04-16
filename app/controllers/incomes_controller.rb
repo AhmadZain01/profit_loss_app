@@ -10,8 +10,12 @@ class IncomesController < ApplicationController
   def create
     @income = Income.new(income_params)
     @income.user = current_user
-    @income.save
-    redirect_to incomes_path(@income)
+    if @income.save
+      flash[:notice] = "Income was successfully updated"
+      redirect_to incomes_path(@income)
+    else
+      render "new"
+    end
   end
 
   def edit
@@ -34,6 +38,8 @@ class IncomesController < ApplicationController
     flash[:danger] = "Budget was successfully deleted"
     redirect_to incomes_path(@income)
   end
+
+  private
 
   def income_params
     params.require(:income).permit(:amount, :description)
