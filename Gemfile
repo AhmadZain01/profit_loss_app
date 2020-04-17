@@ -21,6 +21,7 @@ gem "turbolinks", "~> 5"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "jbuilder", "~> 2.5"
 gem "twitter-bootstrap-rails"
+gem 'bootstrap-daterangepicker-rails'
 gem "devise-bootstrap-views"
 gem "jquery-rails"
 gem "rename"

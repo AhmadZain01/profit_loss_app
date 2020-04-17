@@ -1,7 +1,4 @@
 <h1 align="center"> All Income</h1>
-<p>
-  <%= link_to "Create new Income", new_income_path %>
-</p>
 <table class="table">
   <thead>
     <tr>
@@ -18,12 +15,8 @@
         <td><%= link_to 'Delete', income_path(income), method: :delete, data: {confirm: "Are you sure?"} %></td>
       </tr>
     <% end %>
-    <td><b>Total income </b><mark><%= current_user.total_incomes %></mark></td>
     <div class="form-group">
       <%= link_to "logout", destroy_user_session_path, method: :delete %>
     </div>
   </tbody>
 </table>
-<div class="form-group">
-  <td><b>Remaining balance </b><mark><%= current_user.profit_loss %></mark></td>
-</div>

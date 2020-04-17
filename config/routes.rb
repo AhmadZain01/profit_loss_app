@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/show'
+  post 'show', to: "users#index"
   devise_for :users
   get 'expenses/index'
   resources :expenses
