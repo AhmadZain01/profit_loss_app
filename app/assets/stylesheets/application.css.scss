@@ -12,4 +12,27 @@
 
  *= require_tree .
  *= require_self
+ *= require daterangepicker
  */
+
+.logout {
+  padding-left: 0;
+}
+
+.nav.navbar-right li {
+  .btn {
+    color: #fff !important;
+    margin-top: 5%;
+  }
+  .btn-danger:hover {
+    background-color: darken(#d9534f, 20%) !important;
+  }
+}
+
+.navbar-default {
+  background-color:#FFB20B;
+ 
+}
+.center {
+  text-align: center; 
+}

@@ -9,6 +9,9 @@ class User < ApplicationRecord
   def total_incomes
     incomes.pluck(:amount).sum
   end
+  def profit_loss
+    incomes.pluck(:amount).sum-expenses.pluck(:amount).sum
+  end
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

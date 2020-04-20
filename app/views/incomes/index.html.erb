@@ -1,4 +1,4 @@
-<h1 align="center"> All Income</h1>
+<h1 class="center"> All Income</h1>
 <p>
   <%= link_to "Create new Income", new_income_path %>
 </p>
@@ -14,13 +14,15 @@
     <% @incomes.each do |income| %>
       <tr>
         <td><%= income.amount %> </td>
-        <td> <%= link_to "Edit Income", edit_income_path(income) %></td>
-        <td><%= link_to 'Delete', income_path(income), method: :delete, data: {confirm: "Are you sure?"} %></td>
+        <td> <%= link_to "Edit Income", edit_income_path(income), class: "btn btn-xs btn-primary" %></td>
+        <td><%= link_to 'Delete', income_path(income), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-xs btn-danger"%></td>
       </tr>
     <% end %>
-    <td><%= current_user.total_incomes %></td>
+    <td><b>Total income </b><mark><%= current_user.total_incomes %></mark></td>
     <div class="form-group">
-      <%= link_to "logout", destroy_user_session_path, method: :delete %>
+      <%= link_to "logout", destroy_user_session_path, method: :delete, class: "btn btn-xs btn-primary" %>
     </div>
-  </tbody>
+    <div class="form-group">
+      <td><b>Remaining balance </b><mark><%= current_user.profit_loss %></mark></td>
+    </div>
 </table>

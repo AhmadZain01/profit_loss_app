@@ -24,7 +24,7 @@ class IncomesController < ApplicationController
 
   def update
     @income = Income.find(params[:id])
-    if @income.update(@income_params)
+    if @income.update(income_params)
       flash[:notice] = "Income was successfully updated"
       redirect_to incomes_path(@income)
     else
