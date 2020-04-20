@@ -23,6 +23,7 @@ gem 'bootstrap-daterangepicker-rails'
 gem "devise-bootstrap-views"
 gem "jquery-rails"
 gem "hirb", "~> 0.7.3"
+gem 'devise'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
