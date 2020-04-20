@@ -1,0 +1,26 @@
+<h1 align="center"> All Income</h1>
+<p>
+  <%= link_to "Create new Income", new_income_path %>
+</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Income</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @incomes.each do |income| %>
+      <tr>
+        <td><%= income.amount %> </td>
+        <td> <%= link_to "Edit Income", edit_income_path(income) %></td>
+        <td><%= link_to 'Delete', income_path(income), method: :delete, data: {confirm: "Are you sure?"} %></td>
+      </tr>
+    <% end %>
+    <td><%= current_user.total_incomes %></td>
+    <div class="form-group">
+      <%= link_to "logout", destroy_user_session_path, method: :delete %>
+    </div>
+  </tbody>
+</table>
