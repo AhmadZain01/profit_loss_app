@@ -4,7 +4,7 @@ class IncomesController < ApplicationController
   end
 
   def new
-    @income = Income.new
+    @incomes = Income.new
   end
 
   def create
