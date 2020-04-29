@@ -11,7 +11,7 @@ class IncomesController < ApplicationController
     @income = Income.new(income_params)
     @income.user = current_user
     if @income.save
-      flash[:notice] = "Income was successfully updated"
+      flash[:notice] = "Income was successfully created"
       redirect_to incomes_path(@income)
     else
       render "new"
