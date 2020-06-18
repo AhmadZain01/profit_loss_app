@@ -1,0 +1,9 @@
+<div class="center">
+  <div class="form-group">
+    <%= form_tag users_path, method: :get do %>
+    <%= date_field_tag :start_date %>
+    <%= date_field_tag :end_date %>
+    <%= submit_tag  'search',  class: "btn btn-sm btn-primary" %>
+    <% end %>
+  </div>
+</div>

@@ -2,15 +2,16 @@ class User < ApplicationRecord
   has_many :incomes
   has_many :expenses
 
-  def total_expense
+  def total_expenses
     expenses.pluck(:amount).sum
   end
 
   def total_incomes
     incomes.pluck(:amount).sum
   end
+
   def profit_loss
-    incomes.pluck(:amount).sum-expenses.pluck(:amount).sum
+    total_incomes - total_expenses
   end
 
   # Include default devise modules. Others available are:

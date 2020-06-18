@@ -1,8 +1,4 @@
-<%= link_to 'New', new_expense_path %>
 <h1 align="center"> All Expense</h1>
-<p>
-  <%= link_to "Create new budget", new_expense_path %>
-</p>
 <table class="table">
   <thead>
     <tr>
@@ -13,13 +9,13 @@
   </thead>
   <tbody>
     <% @expenses.each do |expense| %>
-    <tr>
-      <td><%= expense.amount %> </td>
-      <td> <%= link_to "Edit Expense", edit_expense_path(expense),class: "btn btn-xs btn-primary" %></td>
-      <td><%= link_to 'Delete', expense_path(expense), method: :delete, data: {confirm: "Are you sure?"} , class: "btn btn-xs btn-warning" %></td>
-    </tr>
+      <tr>
+        <td><%= expense.amount %> </td>
+        <td> <%= link_to "Edit Expense", edit_expense_path(expense),class: "btn btn-xs btn-primary" %></td>
+        <td><%= link_to 'Delete', expense_path(expense), method: :delete, data: {confirm: "Are you sure?"} , class: "btn btn-xs btn-warning" %></td>
+      </tr>
     <% end %>
     <hr>
-    <td><%= current_user.total_expense %></td>
+    <td><b>Total Expense </b><mark><%=  current_user.total_expenses %></mark></td>
   </tbody>
 </table>

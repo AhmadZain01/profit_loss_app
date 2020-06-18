@@ -24,6 +24,8 @@ gem "devise-bootstrap-views"
 gem "jquery-rails"
 gem "hirb", "~> 0.7.3"
 gem 'devise'
+gem "chartkick"
+gem 'chart-js-rails', '~> 0.1.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

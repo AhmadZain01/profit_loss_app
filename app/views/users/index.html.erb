@@ -1,3 +1,41 @@
+<canvas id="myChart"></canvas>
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var myPieChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['Income', 'Expense', 'Profit'],
+        datasets: [{
+            label: '# of User',
+            data: [ <%= current_user.total_incomes %>,
+            <%= current_user.total_expenses %>,
+            <%= current_user.profit_loss %>
+            ],
+            backgroundColor: [
+                'rgba(255, 0, 0)',
+                'rgba(255, 165, 0)',
+                'rgba(0, 255, 0)',
+      
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
 <h1 align="center"> All Income</h1>
 <table class="table">
   <thead>
@@ -16,7 +54,26 @@
       </tr>
     <% end %>
     <div class="form-group">
-      <%= link_to "logout", destroy_user_session_path, method: :delete %>
     </div>
+  </tbody>
+</table>
+<h1 align="center"> All Expense</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Expense</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @expenses.each do |expense| %>
+      <tr>
+        <td><%= expense.amount %> </td>
+        <td> <%= link_to "Edit Expense", edit_expense_path(expense),class: "btn btn-xs btn-primary" %></td>
+        <td><%= link_to 'Delete', expense_path(expense), method: :delete, data: {confirm: "Are you sure?"} , class: "btn btn-xs btn-warning" %></td>
+      </tr>
+    <% end %>
+    <hr>
   </tbody>
 </table>
